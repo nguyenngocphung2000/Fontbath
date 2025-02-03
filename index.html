@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Web Sinh Động</title>
+    <title>Trang Web Sinh Động và Đẹp</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         /* Reset CSS */
         body, h1, h2, p, nav, footer {
@@ -13,10 +17,35 @@
         }
 
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Poppins', sans-serif;
             background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* Background động */
+        .animated-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            animation: animateBackground 10s infinite alternate;
+        }
+
+        @keyframes animateBackground {
+            0% {
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            }
+            50% {
+                background: linear-gradient(135deg, #fad0c4, #ff9a9e);
+            }
+            100% {
+                background: linear-gradient(135deg, #ff9a9e, #fad0c4);
+            }
         }
 
         header {
@@ -25,6 +54,8 @@
             padding: 20px 0;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
         }
 
         nav {
@@ -32,6 +63,8 @@
             padding: 10px;
             text-align: center;
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 1;
         }
 
         nav a {
@@ -39,11 +72,12 @@
             margin: 0 15px;
             text-decoration: none;
             font-weight: bold;
-            transition: color 0.3s ease;
+            transition: color 0.3s ease, transform 0.3s ease;
         }
 
         nav a:hover {
             color: #ff6f61;
+            transform: translateY(-3px);
         }
 
         .content {
@@ -54,6 +88,8 @@
             border-radius: 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
             animation: fadeIn 2s ease-in-out;
+            position: relative;
+            z-index: 1;
         }
 
         @keyframes fadeIn {
@@ -87,6 +123,7 @@
             width: 100%;
             bottom: 0;
             box-shadow: 0 -4px 10px rgba(0, 0, 0, 0.3);
+            z-index: 1;
         }
 
         /* Hiệu ứng nút */
@@ -106,25 +143,80 @@
             background: #ff3b2f;
             transform: scale(1.1);
         }
+
+        /* Icon và hình ảnh */
+        .icon {
+            font-size: 2em;
+            margin-bottom: 10px;
+            color: #ff6f61;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-10px);
+            }
+        }
+
+        /* Scroll animations */
+        .scroll-animation {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: opacity 1s ease, transform 1s ease;
+        }
+
+        .scroll-animation.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
     </style>
 </head>
 <body>
+    <div class="animated-background"></div>
     <header>
-        <h1>Chào mừng đến với Trang Web Sinh Động</h1>
+        <h1>Chào mừng đến với Trang Web Sinh Động và Đẹp</h1>
     </header>
     <nav>
-        <a href="#">Trang Chủ</a>
-        <a href="#">Giới Thiệu</a>
-        <a href="#">Dịch Vụ</a>
-        <a href="#">Liên Hệ</a>
+        <a href="#"><i class="fas fa-home"></i> Trang Chủ</a>
+        <a href="#"><i class="fas fa-info-circle"></i> Giới Thiệu</a>
+        <a href="#"><i class="fas fa-cogs"></i> Dịch Vụ</a>
+        <a href="#"><i class="fas fa-envelope"></i> Liên Hệ</a>
     </nav>
-    <div class="content">
+    <div class="content scroll-animation">
+        <div class="icon">
+            <i class="fas fa-star"></i>
+        </div>
         <h2>Nội dung chính của trang web</h2>
         <p>Đây là một đoạn văn bản mẫu để minh họa nội dung của trang web. Bạn có thể thêm nhiều hiệu ứng và màu sắc để làm trang web trở nên hấp dẫn hơn.</p>
         <button class="btn">Nhấn vào đây</button>
     </div>
     <footer>
-        <p>&copy; 2023 Trang Web Sinh Động. Bảo lưu mọi quyền.</p>
+        <p>&copy; 2023 Trang Web Sinh Động và Đẹp. Bảo lưu mọi quyền.</p>
     </footer>
+
+    <script>
+        // Scroll animation
+        const scrollElements = document.querySelectorAll('.scroll-animation');
+        const elementInView = (el) => {
+            const elementTop = el.getBoundingClientRect().top;
+            return (elementTop <= window.innerHeight * 0.75);
+        };
+        const displayScrollElement = (element) => {
+            element.classList.add('visible');
+        };
+        const handleScrollAnimation = () => {
+            scrollElements.forEach((el) => {
+                if (elementInView(el)) {
+                    displayScrollElement(el);
+                }
+            });
+        };
+        window.addEventListener('scroll', () => {
+            handleScrollAnimation();
+        });
+    </script>
 </body>
 </html>
