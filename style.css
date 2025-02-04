@@ -15,7 +15,7 @@
 
 /* ========== Tổng thể giao diện ========== */
 body {
-    background-color: #0d3b66;
+    background-color: #f0f0f0;
     color: #00000;
     font-family: Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
@@ -25,10 +25,9 @@ body {
 
 /* ========== Chế độ tối ========== */
 .dark {
-    background-color: #1a2b3c;
-    color: #000000;
+    background-color: #2a2a2a;
+    color: #ffffff;
     text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
- -webkit-text-stroke: 1px white;
 }
 
 /* ========== Thanh điều hướng (Navbar) ========== */
