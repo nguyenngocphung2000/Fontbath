@@ -1,3 +1,4 @@
+/* ========== Hiệu ứng tải trang ========== */
 #preloader {
     position: fixed;
     top: 0;
@@ -12,43 +13,34 @@
     transition: opacity 0.5s ease-out;
 }
 
-/* Ẩn preloader sau khi tải xong */
-.hidden {
-    opacity: 0;
-    pointer-events: none;
-}
-/* ======= Chế độ sáng (Mặc định) ======= */
+/* ========== Tổng thể giao diện ========== */
 body {
-    background-color: #0d3b66; /* Xanh dương đậm */
-    color: #ffffff; /* Chữ màu sáng */
+    background-color: #0d3b66;
+    color: #ffffff;
     font-family: Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
     text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.6);
+    padding-top: 70px; /* Tránh che mất nội dung do navbar fixed */
 }
 
-/* ======= Thanh tiêu đề ======= */
-header {
-    background-color: #0d3b66; /* Xanh dương đậm */
-    color: #ffffff; /* Chữ sáng */
-    text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.6);
-    padding: 20px;
-    text-align: center;
-    font-size: 24px;
-}
-
-/* ======= Chế độ tối ======= */
+/* ========== Chế độ tối ========== */
 .dark {
-    background-color: #1a2b3c; /* Xanh đậm pha xám */
-    color: #f0f0f0; /* Chữ sáng hơn để nổi bật */
+    background-color: #1a2b3c;
+    color: #f0f0f0;
     text-shadow: 2px 2px 4px rgba(60, 60, 60, 0.8);
 }
 
-/* ======= Nút chế độ tối ======= */
-#darkModeToggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
-    padding: 10px 15px;
+/* ========== Thanh điều hướng (Navbar) ========== */
+nav {
+    background: linear-gradient(45deg, #3a7bd5, #3a6073);
+    color: white;
+    padding: 15px;
+    text-align: center;
+}
+
+/* ========== Nút chế độ tối ========== */
+.dark-mode-btn {
+    padding: 8px 12px;
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
     border: none;
@@ -58,47 +50,59 @@ header {
     transition: 0.3s;
 }
 
-#darkModeToggle:hover {
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
+.dark-mode-btn:hover {
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.6);
 }
 
-/* ======= Hộp tìm kiếm ======= */
+/* ========== Hộp tìm kiếm ========== */
+.search-container {
+    margin-bottom: 20px;
+}
+
 input[type="text"] {
-    background-color: #ffffff;
-    color: #333;
+    background-color: white;
+    color: black;
     border: 2px solid #007BFF;
-    padding: 10px;
+    padding: 12px;
     border-radius: 8px;
     transition: 0.3s;
+    font-size: 16px;
 }
 
-/* ======= Hộp tìm kiếm trong chế độ tối ======= */
 .dark input[type="text"] {
     background-color: #2a3b4c;
     color: white;
     border: 2px solid #ffffff;
 }
 
-.dark input[type="text"]::placeholder {
-    color: #ccc;
-}
-
-/* ======= Làm đẹp thẻ ứng dụng ======= */
+/* ========== Ứng dụng ========== */
 .app-card {
-    background: #ffffff;
-    border: 1px solid #ddd;
+    background: white;
+    border-radius: 10px;
     padding: 15px;
-    border-radius: 8px;
-    transition: all 0.3s ease;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
 }
 
 .app-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* ======= Ứng dụng trong chế độ tối ======= */
 .dark .app-card {
     background: #2a3b4c;
     border: 1px solid #444;
+}
+
+/* ========== Nút tải xuống ========== */
+.download-btn {
+    margin-top: 10px;
+    padding: 8px 12px;
+    background: #007BFF;
+    color: white;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+
+.download-btn:hover {
+    background: #0056b3;
 }
