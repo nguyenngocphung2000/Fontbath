@@ -70,3 +70,11 @@ function renderApps(filteredApps) {
         localStorage.setItem("darkMode", body.classList.contains("dark") ? "enabled" : "disabled");
     });
 });
+document.addEventListener("contextmenu", function(event) {
+    event.preventDefault();  // Ngăn việc mở menu chuột phải
+});
+
+// Ngăn việc sao chép nội dung
+document.addEventListener("copy", function(event) {
+    event.preventDefault();  // Ngăn việc sao chép
+});
