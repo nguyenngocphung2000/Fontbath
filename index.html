@@ -3,14 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trang Chia Sẻ Ứng Dụng Shadowrocket</title>
+    <title>Trang Chia Sẻ Ứng Dụng</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-gray-100 dark:bg-gray-900 text-gray-900 dark:text-white transition-all">
 
+    <!-- Hiệu ứng tải trang -->
+    <div id="preloader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+        <div class="loader"></div>
+    </div>
+
     <!-- Thanh điều hướng -->
-    <nav class="p-4 bg-white dark:bg-gray-800 shadow-md flex justify-between">
+    <nav class="p-4 bg-white dark:bg-gray-800 shadow-md flex justify-between items-center">
         <h1 class="text-xl font-bold">Ứng Dụng Của Tôi</h1>
         <button id="darkModeToggle" class="px-4 py-2 bg-gray-200 dark:bg-gray-700 rounded">🌙</button>
     </nav>
@@ -18,21 +23,12 @@
     <!-- Phần tìm kiếm -->
     <div class="p-6 text-center">
         <input type="text" id="search" placeholder="Tìm kiếm ứng dụng..." 
-               class="p-2 w-1/2 border rounded">
+               class="p-3 w-1/2 border rounded-lg focus:ring focus:ring-blue-400">
     </div>
 
     <!-- Danh sách ứng dụng -->
-    <div id="appList" class="p-6 grid grid-cols-1 md:grid-cols-3 gap-4">
-        <div class="app-card p-4 bg-white dark:bg-gray-800 rounded shadow-md">
-            <h2 class="font-semibold">Ứng dụng 1</h2>
-            <p>Mô tả ngắn về ứng dụng.</p>
-            <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded">Tải xuống</button>
-        </div>
-        <div class="app-card p-4 bg-white dark:bg-gray-800 rounded shadow-md">
-            <h2 class="font-semibold">Ứng dụng 2</h2>
-            <p>Mô tả ngắn về ứng dụng.</p>
-            <button class="mt-2 px-4 py-2 bg-blue-500 text-white rounded">Tải xuống</button>
-        </div>
+    <div id="appList" class="p-6 grid grid-cols-1 md:grid-cols-3 gap-6">
+        <!-- Ứng dụng sẽ được thêm bằng JavaScript -->
     </div>
 
     <!-- Phần liên hệ -->
