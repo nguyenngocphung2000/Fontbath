@@ -4,12 +4,14 @@ body {
     color: #ffffff; /* Chữ màu sáng */
     font-family: Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
+    text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.6);
 }
 
 /* ======= Thanh tiêu đề ======= */
 header {
     background-color: #0d3b66; /* Xanh dương đậm */
     color: #ffffff; /* Chữ sáng */
+    text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.6);
     padding: 20px;
     text-align: center;
     font-size: 24px;
@@ -19,6 +21,7 @@ header {
 .dark {
     background-color: #1a2b3c; /* Xanh đậm pha xám */
     color: #f0f0f0; /* Chữ sáng hơn để nổi bật */
+    text-shadow: 2px 2px 4px rgba(60, 60, 60, 0.8);
 }
 
 /* ======= Nút chế độ tối ======= */
