@@ -27,7 +27,14 @@ body {
 .dark {
     background-color: #2a2a2a;
     color: #ffffff;
-    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.8);
+}
+.dark h1, .dark h2, .dark p {
+    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7); /* Bóng nhẹ cho tiêu đề và đoạn văn */
+    transition: color 0.3s ease;
+}
+
+.dark h1:hover, .dark h2:hover {
+    color: #4a90e2; /* Chữ tiêu đề chuyển màu khi hover */
 }
 
 /* ========== Thanh điều hướng (Navbar) ========== */
@@ -69,28 +76,56 @@ input[type="text"] {
     font-size: 16px;
 }
 
-.dark input[type="text"] {
-    background-color: #2a3b4c;
-    color: white;
-    border: 2px solid #ffffff;
+
+.dark input[type="text"]:focus {
+    border-color: #007BFF; /* Viền xanh khi focus */
+    outline: none;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.7); /* Hiệu ứng ánh sáng xung quanh khi focus */
 }
 
 /* ========== Ứng dụng ========== */
 .app-card {
-    background: white;
-    border-radius: 10px;
-    padding: 15px;
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    background: #333333; /* Nền thẻ ứng dụng xám tối */
+    border: 1px solid #444444; /* Viền xám đậm */
+    padding: 20px;
+    border-radius: 12px; /* Bo góc mềm mại */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .app-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px); /* Đẩy lên khi hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2); /* Bóng đổ mạnh hơn khi hover */
 }
 
-.dark .app-card {
-    background: #2a3b4c;
-    border: 1px solid #444;
+/* Các hiệu ứng bổ sung */
+.dark .app-card h2 {
+    color: #4a90e2; /* Chữ tiêu đề ứng dụng màu xanh sáng */
+}
+
+.dark .app-card button {
+    background-color: #007bff; /* Nền nút xanh sáng */
+    color: #fff; /* Chữ trắng */
+}
+
+.dark .app-card button:hover {
+    background-color: #0056b3; /* Xanh đậm khi hover */
+}
+
+/* Chế độ tối cho các phần tử khác */
+.dark input[type="text"] {
+    background-color: #444; /* Xám đậm hơn cho ô tìm kiếm */
+    color: #fff;
+}
+
+.dark input[type="text"]:focus {
+    border-color: #4a90e2; /* Viền xanh sáng khi focus */
+    box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+}
+
+.dark h1, .dark h2, .dark p {
+    font-family: 'Arial', sans-serif; /* Chọn phông chữ đẹp và dễ đọc */
+    letter-spacing: 1px; /* Thêm không gian giữa các chữ */
+    line-height: 1.6; 
 }
 
 /* ========== Nút tải xuống ========== */
