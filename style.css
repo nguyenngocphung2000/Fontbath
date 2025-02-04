@@ -1,18 +1,26 @@
-/* ======= Giao diện mặc định (chế độ sáng) ======= */
+/* ======= Chế độ sáng (Mặc định) ======= */
 body {
-    background-color: #f5f5f5;
-    color: #333;
+    background-color: #0d3b66; /* Xanh dương đậm */
+    color: #ffffff; /* Chữ màu sáng */
     font-family: Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
+}
+
+/* ======= Thanh tiêu đề ======= */
+header {
+    background-color: #0d3b66; /* Xanh dương đậm */
+    color: #ffffff; /* Chữ sáng */
+    padding: 20px;
+    text-align: center;
 }
 
 /* ======= Chế độ tối ======= */
 .dark {
     background-color: #1a2b3c; /* Xanh đậm pha xám */
-    color: #f0f0f0; /* Màu chữ sáng hơn để không bị chìm */
+    color: #f0f0f0; /* Chữ sáng hơn để nổi bật */
 }
 
-/* Làm đẹp nút chuyển chế độ tối */
+/* ======= Nút chế độ tối ======= */
 #darkModeToggle {
     position: fixed;
     top: 10px;
@@ -31,7 +39,7 @@ body {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-/* Hộp tìm kiếm */
+/* ======= Hộp tìm kiếm ======= */
 input[type="text"] {
     background-color: #ffffff;
     color: #333;
@@ -41,12 +49,7 @@ input[type="text"] {
     transition: 0.3s;
 }
 
-input[type="text"]:focus {
-    border-color: #ff7eb3;
-    box-shadow: 0 0 10px rgba(255, 126, 179, 0.8);
-}
-
-/* Hộp tìm kiếm trong chế độ tối */
+/* ======= Hộp tìm kiếm trong chế độ tối ======= */
 .dark input[type="text"] {
     background-color: #2a3b4c;
     color: white;
@@ -56,9 +59,10 @@ input[type="text"]:focus {
 .dark input[type="text"]::placeholder {
     color: #ccc;
 }
-/* Làm đẹp thẻ ứng dụng */
+
+/* ======= Làm đẹp thẻ ứng dụng ======= */
 .app-card {
-    background: linear-gradient(135deg, #ffffff, #f7f7f7);
+    background: #ffffff;
     border: 1px solid #ddd;
     padding: 15px;
     border-radius: 8px;
@@ -70,8 +74,8 @@ input[type="text"]:focus {
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
 }
 
-/* Ứng dụng trong chế độ tối */
+/* ======= Ứng dụng trong chế độ tối ======= */
 .dark .app-card {
-    background: #222;
+    background: #2a3b4c;
     border: 1px solid #444;
 }
