@@ -95,14 +95,32 @@ input[type="text"] {
 
 /* ========== Nút tải xuống ========== */
 .download-btn {
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #007BFF;
+    display: block;
+    padding: 12px;
+    text-align: center;
+    font-weight: bold;
     color: white;
-    border-radius: 5px;
-    transition: 0.3s;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b); /* Hiệu ứng chuyển màu */
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
 }
 
 .download-btn:hover {
-    background: #0056b3;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+}
+
+.download-btn:active {
+    transform: scale(0.95);
+}
+
+/* Chế độ tối */
+.dark .download-btn {
+    background: linear-gradient(45deg, #6a11cb, #2575fc);
+    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+}
+
+.dark .download-btn:hover {
+    box-shadow: 0 8px 20px rgba(106, 17, 203, 0.6);
 }
