@@ -1,51 +1,78 @@
-/* Hiệu ứng đẹp hơn cho nút */
-button {
-    transition: all 0.3s ease;
-    border-radius: 8px;
-    font-weight: bold;
+/* ======= Giao diện mặc định (chế độ sáng) ======= */
+body {
+    background-color: #f5f5f5;
+    color: #333;
+    font-family: Arial, sans-serif;
+    transition: background 0.3s, color 0.3s;
 }
 
-button:hover {
-    box-shadow: 0 0 10px rgba(0, 150, 255, 0.6);
-    transform: scale(1.05);
+/* ======= Chế độ tối ======= */
+.dark {
+    background-color: #121212;
+    color: #ffffff;
 }
 
-/* Nút chế độ tối */
+/* Làm đẹp nút chuyển chế độ tối */
 #darkModeToggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    padding: 10px 15px;
     background: linear-gradient(45deg, #6a11cb, #2575fc);
     color: white;
-    padding: 10px 15px;
     border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
 }
 
 #darkModeToggle:hover {
     box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-/* Hộp tìm kiếm đẹp hơn */
+/* Hộp tìm kiếm */
 input[type="text"] {
+    background-color: #ffffff;
+    color: #333;
     border: 2px solid #007BFF;
+    padding: 10px;
     border-radius: 8px;
-    padding: 12px;
-    width: 60%;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: all 0.3s ease;
+    transition: 0.3s;
 }
 
 input[type="text"]:focus {
-    outline: none;
     border-color: #ff7eb3;
     box-shadow: 0 0 10px rgba(255, 126, 179, 0.8);
+}
+
+/* Hộp tìm kiếm trong chế độ tối */
+.dark input[type="text"] {
+    background-color: #222;
+    color: white;
+    border: 2px solid #ffffff;
+}
+
+.dark input[type="text"]::placeholder {
+    color: #bbb;
 }
 
 /* Làm đẹp thẻ ứng dụng */
 .app-card {
     background: linear-gradient(135deg, #ffffff, #f7f7f7);
     border: 1px solid #ddd;
+    padding: 15px;
+    border-radius: 8px;
     transition: all 0.3s ease;
 }
 
 .app-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Ứng dụng trong chế độ tối */
+.dark .app-card {
+    background: #222;
+    border: 1px solid #444;
 }
