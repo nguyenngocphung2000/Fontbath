@@ -38,8 +38,8 @@ function renderApps(filteredApps) {
         appCard.innerHTML = `
             <h2 class="font-semibold">${app.name}</h2>
             <p>${app.desc}</p>
-            <a href="${app.link}" target="_blank" class="mt-2 px-4 py-2 bg-blue-500 text-white rounded block text-center">
-               Lấy link
+            <a href="${app.link}" target="_blank" class="download-btn">
+                 Tải xuống
             </a>
         `;
         appList.appendChild(appCard);
