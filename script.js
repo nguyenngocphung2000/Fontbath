@@ -2,7 +2,20 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         document.getElementById("preloader").style.display = "none";
     }, 500);
+const menuToggle = document.getElementById("menuToggle");
+    const menuDropdown = document.getElementById("menuDropdown");
 
+    // Khi bấm vào nút menu
+    menuToggle.addEventListener("click", function () {
+        menuDropdown.classList.toggle("show");
+    });
+
+    // Ẩn dropdown nếu bấm ra ngoài
+    document.addEventListener("click", function (event) {
+        if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
+            menuDropdown.classList.remove("show");
+        }
+    });
     const apps = [
     { name: "Zalo", desc: "Ứng dụng nhắn tin phổ biến.", link: "https://zalo.me/download" },
     { name: "Telegram", desc: "Nhắn tin bảo mật, tốc độ cao.", link: "https://telegram.org/apps" },
