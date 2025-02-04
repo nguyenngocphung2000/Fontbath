@@ -159,3 +159,46 @@ input[type="text"] {
 .dark .download-btn:hover {
     box-shadow: 0 8px 20px rgba(106, 17, 203, 0.6);
 }
+/* Tùy chỉnh dropdown */
+#menuDropdown {
+    display: none; /* Ẩn mặc định */
+    position: absolute;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* Chế độ tối */
+.dark #menuDropdown {
+    background-color: #333;
+}
+
+/* Hiệu ứng khi hiển thị */
+#menuDropdown.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(5px);
+}
+
+/* Hiệu ứng hover */
+#menuDropdown a {
+    display: block;
+    padding: 10px;
+    color: #333;
+    text-decoration: none;
+    transition: background 0.3s ease;
+}
+
+#menuDropdown a:hover {
+    background-color: #f0f0f0;
+}
+
+/* Chế độ tối */
+.dark #menuDropdown a {
+    color: white;
+}
+
+.dark #menuDropdown a:hover {
+    background-color: #444;
+}
