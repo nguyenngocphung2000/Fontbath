@@ -1,9 +1,9 @@
-document.addEventListener("DOMContentLoaded", () => {
-    // Ẩn hiệu ứng tải trang
+document.addEventListener("DOMContentLoaded", function () {
+    // Ẩn preloader sau khi trang tải xong
     setTimeout(() => {
-        document.getElementById("preloader").style.opacity = "0";
-        setTimeout(() => document.getElementById("preloader").style.display = "none", 500);
-    }, 1000);
+        document.getElementById("preloader").style.display = "none";
+    }, 500); // 0.5 giây để tránh giật lag
+});
 
     // Danh sách ứng dụng
     const apps = [
