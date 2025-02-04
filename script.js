@@ -34,16 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Dark mode toggle
     const darkModeToggle = document.getElementById("darkModeToggle");
-    const body = document.body;
+const body = document.body;
 
-    if (localStorage.getItem("darkMode") === "enabled") {
-        body.classList.add("dark");
-    }
+// Kiểm tra trạng thái dark mode từ localStorage
+if (localStorage.getItem("darkMode") === "enabled") {
+    body.classList.add("dark");
+}
 
-    darkModeToggle.addEventListener("click", () => {
-        body.classList.toggle("dark");
-        localStorage.setItem("darkMode", body.classList.contains("dark") ? "enabled" : "disabled");
-    });
+// Xử lý bật/tắt chế độ tối
+darkModeToggle.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    localStorage.setItem("darkMode", body.classList.contains("dark") ? "enabled" : "disabled");
+});
 
     // Tìm kiếm ứng dụng
     const searchInput = document.getElementById("search");
