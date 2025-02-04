@@ -26,7 +26,7 @@ body {
 /* ========== Chế độ tối ========== */
 .dark {
     background-color: #1a2b3c;
-    color: #f0f0f0;
+    color: #000000;
     text-shadow: 2px 2px 4px rgba(60, 60, 60, 0.8);
 }
 
