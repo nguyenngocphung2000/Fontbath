@@ -1,9 +1,8 @@
 /* ========== Hiệu ứng tải trang ========== */
-/* Hiệu ứng nền tải trang */
 #preloader {
     position: fixed;
     inset: 0;
-    background-color: #ffffff;
+    background: linear-gradient(135deg, #1e3a8a, #2563eb);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -11,13 +10,11 @@
     transition: opacity 0.8s ease-in-out, visibility 0.8s ease-in-out;
 }
 
-/* Ẩn preloader khi tải xong */
 #preloader.hide {
     opacity: 0;
     visibility: hidden;
 }
 
-/* Hiệu ứng vòng tròn sóng động */
 .loader {
     display: flex;
     justify-content: center;
@@ -26,59 +23,34 @@
 }
 
 .loader div {
-    width: 14px;
-    height: 14px;
-    background-color: #007bff;
+    width: 16px;
+    height: 16px;
+    background: #fff;
     border-radius: 50%;
     animation: bounce 1.5s infinite ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-.loader div:nth-child(2) {
-    animation-delay: 0.2s;
-}
+.loader div:nth-child(2) { animation-delay: 0.2s; }
+.loader div:nth-child(3) { animation-delay: 0.4s; }
 
-.loader div:nth-child(3) {
-    animation-delay: 0.4s;
-}
-
-/* Animation cho loader */
 @keyframes bounce {
-    0%, 80%, 100% {
-        transform: scale(0);
-        opacity: 0.3;
-    }
-    40% {
-        transform: scale(1);
-        opacity: 1;
-    }
+    0%, 80%, 100% { transform: scale(0); opacity: 0.3; }
+    40% { transform: scale(1.2); opacity: 1; }
 }
+
 /* ========== Tổng thể giao diện ========== */
 body {
-    background-color: #2a2a2a;
+    background: #2a2a2a;
     color: #fff;
-    font-family: Arial, sans-serif;
+    font: 16px 'Poppins', sans-serif; /* Shorthand cho font */
     transition: background 0.3s, color 0.3s;
-    padding-top: 80px; /* Để tránh navbar che mất nội dung */
+    padding-top: 80px;
 }
 
 .dark body {
-    background-color: #2a2a2a;
+    background: #1a1a1a;
     color: #fff;
-}
-
-/* ========== Chế độ tối ========== */
-.dark {
-    background-color: #2a2a2a;
-    color: #ffffff;
-}
-
-.dark h1, .dark h2, .dark p {
-    
-    transition: color 0.3s ease;
-}
-
-.dark h1:hover, .dark h2:hover {
-    color: #4a90e2;
 }
 
 /* ========== Thanh điều hướng (Navbar) ========== */
@@ -87,105 +59,98 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px 15px;
-    height: 55px; 
-    font-size: 14px;
-    background: linear-gradient(45deg, #1e3a8a, #2563eb); /* Hiệu ứng gradient xanh dương */
-    color: white;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
-    border-radius: 0 0 10px 10px; /* Bo góc dưới */
+    height: 60px;
+    background: linear-gradient(45deg, #1e3a8a, #2563eb);
+    color: #fff;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border-radius: 0 0 15px 15px;
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
+    transition: all 0.3s ease;
 }
 
-/* ====== Tiêu đề ở giữa ====== */
 .navbar-title {
     flex-grow: 1;
     text-align: center;
-    font-size: 20px;
-    font-weight: bold;
+    font: bold 22px 'Poppins', sans-serif; /* Shorthand cho font */
     text-transform: uppercase;
-    letter-spacing: 1px;
+    letter-spacing: 1.5px;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
 }
 
-/* ====== Nút menu & chế độ tối ====== */
 .navbar button {
-    background: rgba(255, 255, 255, 0.2); /* Nền trong suốt nhẹ */
+    background: rgba(255, 255, 255, 0.2);
     border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 6px 10px;
-    border-radius: 8px;
-    font-size: 16px;
-    color: white;
+    padding: 8px 12px;
+    border-radius: 10px;
+    font: 16px 'Poppins', sans-serif; /* Shorthand cho font */
+    color: #fff;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
 }
 
-/* ====== Hiệu ứng hover ====== */
 .navbar button:hover {
     background: rgba(255, 255, 255, 0.3);
     transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.5);
 }
 
-/* ====== Dark Mode ====== */
 .dark .navbar {
-    background: linear-gradient(45deg, #0f172a, #1e293b); /* Chuyển màu tối hơn */
-    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
-}
-
-/* ====== Giữ nút menu bên trái và nút chế độ tối bên phải ====== */
-#menu-toggle {
-    order: -1;
-}
-
-#dark-mode-toggle {
-    order: 1;
+    background: linear-gradient(45deg, #0f172a, #1e293b);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
 /* ========== Hộp tìm kiếm ========== */
-.search-container {
-    margin-bottom: 20px;
-}
-
 input[type="text"] {
-    background-color: white;
-    color: black;
+    background: #fff;
+    color: #000;
     border: 2px solid #007BFF;
     padding: 12px;
-    border-radius: 8px;
-    transition: 0.3s;
-    font-size: 16px;
+    border-radius: 10px;
+    font: 16px 'Poppins', sans-serif; /* Shorthand cho font */
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.3);
 }
 
 .dark input[type="text"] {
-    background-color: #444;
+    background: #444;
     color: #fff;
 }
 
 .dark input[type="text"]:focus {
     border-color: #4a90e2;
     outline: none;
-    box-shadow: 0 0 8px rgba(74, 144, 226, 0.6);
+    box-shadow: 0 0 15px rgba(74, 144, 226, 0.8);
 }
 
 /* ========== Dropdown menu ========== */
 #menuDropdown {
-    position: fixed; 
-    top: 50px; /* Để menu nằm dưới navbar */
-    left: 10px; /* Đưa menu ra bên trái */
-    background-color: #ffffff;
-    border-radius: 8px;
-    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 60px;
+    left: 10px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     padding: 10px 0;
     width: 200px;
-    z-index: 1100; /* Đảm bảo menu hiển thị trên navbar */
-    display: none;  /* Ẩn mặc định */
+    z-index: 1100;
+    display: none;
+    transition: all 0.3s ease;
 }
 
-/* Hiển thị menu */
 #menuDropdown.show {
     display: block;
+    animation: fadeIn 0.3s ease;
 }
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 #menuDropdown ul {
     list-style: none;
     margin: 0;
@@ -198,156 +163,86 @@ input[type="text"] {
 
 #menuDropdown ul li a {
     text-decoration: none;
-    font-size: 14px;
+    font: 14px 'Poppins', sans-serif; /* Shorthand cho font */
     color: #333;
     transition: background 0.3s, color 0.3s;
 }
 
 #menuDropdown ul li a:hover {
-    background-color: #e0e0e0;
+    background: #e0e0e0;
 }
 
 .dark #menuDropdown {
-    background-color: #333;
+    background: #333;
 }
 
 .dark #menuDropdown ul li a {
-    color: white;
+    color: #fff;
 }
 
 .dark #menuDropdown ul li a:hover {
-    background-color: #444;
+    background: #444;
 }
+
 /* ========== Thẻ ứng dụng ========== */
 .app-card {
-    background: #faebef; /* Màu nền sáng */
-    color: #333; /* Màu chữ tối */
+    background: linear-gradient(135deg, #fff, #f0f0f0);
+    color: #333;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
     text-align: left;
     width: 100%;
-    max-width: 320px; /* Định kích thước đồng nhất */
+    max-width: 320px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
-/* Hiệu ứng khi hover */
 .app-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
 }
 
-/* Tiêu đề căn trái */
-.app-card h2 {
-    font-size: 1.25rem;
-    font-weight: bold;
-    color: #222;
-    margin-bottom: 10px;
-    text-align: left;
-}
-
-/* Văn bản mô tả căn trái */
-.app-card p {
-    font-size: 1rem;
-    color: #555;
-    margin-bottom: 15px;
-    text-align: left;
-}
-
-/* Hàng chứa nút tải xuống */
-.app-card .app-footer {
-    display: flex;
-    justify-content: flex-start;
-    width: 100%;
-}
-
-/*Nút tải xuống căn trái */
-
-.app-card .download-btn {
-    display: inline-block;
-    padding: 10px 15px;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    background: #2c5f2d;
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-right: auto; /* Đẩy nút về bên trái */
-}
-
-/* Hover nút */
-.app-card .download-btn:hover {
-    background: #003f7f;
-    transform: translateY(-2px);
-}
-/* Chế độ tối */
 .dark .app-card {
-    background: #222; /* Nền tối */
-    color: #ddd; /* Chữ sáng hơn */
+    background: linear-gradient(135deg, #333, #444);
+    color: #ddd;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* Chế độ tối - tiêu đề */
-.dark .app-card h2 {
-    color: #ffffff;
-}
-
-/* Chế độ tối - mô tả */
-.dark .app-card p {
-    color: #bbbbbb;
-}
-
-/* Chế độ tối - nút tải */
-.dark .app-card .download-btn {
-    background: #003366;
-}
-
-/* Hover trong chế độ tối */
-.dark .app-card .download-btn:hover {
-    background: #002244;
-}
-
-/* Nút tải xuống */
+/* ========== Nút tải xuống ========== */
 .download-btn {
     display: inline-block;
     padding: 12px 24px;
     border-radius: 10px;
     text-decoration: none;
-    font-weight: bold;
-    font-size: 1rem;
-    background: #0056b3; /* Xanh đậm hơn */
-    color: white;
-    transition: background 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    font: bold 1rem 'Poppins', sans-serif; /* Shorthand cho font */
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: #fff;
+    transition: all 0.3s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     border: 2px solid transparent;
 }
 
-/* Hover - Khi rê chuột vào */
 .download-btn:hover {
-    background: #003f7f; /* Màu tối hơn khi hover */
+    background: linear-gradient(135deg, #0056b3, #003f7f);
     box-shadow: 0 6px 15px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
 }
 
-/* Active - Khi nhấn nút */
 .download-btn:active {
     transform: scale(0.96);
     box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
 }
 
-/* Chế độ tối */
 .dark .download-btn {
-    background: #003366; /* Màu xanh navy tối */
+    background: linear-gradient(135deg, #003366, #002244);
     border-color: #004080;
 }
 
-/* Hover trong chế độ tối */
 .dark .download-btn:hover {
-    background: #002244;
+    background: linear-gradient(135deg, #002244, #001122);
 }
