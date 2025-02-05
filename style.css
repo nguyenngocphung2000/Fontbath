@@ -170,6 +170,7 @@ input[type="text"] {
 }
 
 /* ========== Thẻ ứng dụng ========== */
+/* ========== Thẻ ứng dụng ========== */
 .app-card {
     background: #f0f0f0; /* Màu nền sáng cho chế độ sáng */
     border: 1px solid #444;
@@ -178,10 +179,19 @@ input[type="text"] {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-/* Màu nền cho chế độ tối */
+/* Màu nền và màu chữ cho chế độ tối */
 .dark .app-card {
     background: #333; /* Màu nền tối cho chế độ tối */
     border: 1px solid #444;
+}
+
+/* Màu chữ tiêu đề và nội dung trong chế độ tối */
+.dark .app-card h2 {
+    color: #ffffff; /* Chữ màu trắng cho tiêu đề trong chế độ tối */
+}
+
+.dark .app-card p {
+    color: #dcdcdc; /* Chữ màu xám sáng cho văn bản trong chế độ tối */
 }
 
 .app-card:hover {
@@ -189,10 +199,7 @@ input[type="text"] {
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
 }
 
-.dark .app-card h2 {
-    color: #4a90e2;
-}
-
+/* Màu chữ cho nút trong chế độ tối */
 .dark .app-card button {
     background-color: #007bff;
     color: #fff;
