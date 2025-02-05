@@ -19,7 +19,6 @@ body {
     color: #000;
     font-family: Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
-    text-shadow: 2px 2px 4px rgba(128, 128, 128, 0.6);
     padding-top: 80px; /* Để tránh navbar che mất nội dung */
 }
 
