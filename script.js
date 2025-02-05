@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo(0, 0);
     setTimeout(() => {
         document.getElementById("preloader").style.display = "none";
     }, 500);
