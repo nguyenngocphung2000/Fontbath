@@ -84,7 +84,7 @@ document.addEventListener("DOMContentLoaded", function () {
     
 });
 // Chức năng cho nút menu để hiển thị hoặc ẩn nội dung
-document.getElementById('menu-toggle').addEventListener('click', function() {
+document.getElementById('menuToggle').addEventListener('click', function() {
     var menu = document.getElementById('menuDropdown');
     // Toggle hiển thị menu
     menu.classList.toggle('hidden');
