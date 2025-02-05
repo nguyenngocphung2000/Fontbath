@@ -15,8 +15,8 @@
 
 /* ========== Tổng thể giao diện ========== */
 body {
-    background-color: #f0f0f0;
-    color: #000;
+    background-color: #2a2a2a;
+    color: #fff;
     font-family: Arial, sans-serif;
     transition: background 0.3s, color 0.3s;
     padding-top: 80px; /* Để tránh navbar che mất nội dung */
