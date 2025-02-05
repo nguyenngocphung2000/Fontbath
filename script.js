@@ -88,20 +88,13 @@ document.addEventListener("DOMContentLoaded", function () {
     const menuDropdown = document.getElementById("menuDropdown");
 
     menuToggle.addEventListener("click", function () {
-        if (menuDropdown.classList.contains("hidden")) {
-            menuDropdown.classList.remove("hidden");
-            menuDropdown.classList.add("block");
-        } else {
-            menuDropdown.classList.add("hidden");
-            menuDropdown.classList.remove("block");
-        }
+        menuDropdown.classList.toggle("hidden");
     });
 
-    // Đóng menu khi nhấn ra ngoài
+    // Ẩn menu khi click ra ngoài
     document.addEventListener("click", function (event) {
         if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
             menuDropdown.classList.add("hidden");
-            menuDropdown.classList.remove("block");
         }
     });
 });
