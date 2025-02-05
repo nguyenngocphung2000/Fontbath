@@ -128,47 +128,51 @@ input[type="text"] {
 }
 
 /* ========== Dropdown menu ========== */
+/* ========== Dropdown menu ========== */
 #menuDropdown {
-    visibility: hidden;
-    opacity: 0;
     position: absolute;
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease, visibility 0.3s;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    padding: 10px;
+    top: 50px; /* Đặt vị trí menu dưới navbar */
+    right: 20px;
+    width: 200px; /* Chiều rộng của menu */
+}
+
+#menuDropdown ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+#menuDropdown ul li {
+    margin-bottom: 10px;
+}
+
+#menuDropdown ul li a {
+    text-decoration: none;
+    font-size: 14px;
+    color: #333;
+    transition: background 0.3s, color 0.3s;
+}
+
+#menuDropdown ul li a:hover {
+    background-color: #e0e0e0;
 }
 
 .dark #menuDropdown {
     background-color: #333;
 }
 
-#menuDropdown.show {
-    visibility: visible;
-    opacity: 1;
-    transform: translateY(0);
-}
-
-#menuDropdown a {
-    display: block;
-    padding: 10px;
-    color: #333;
-    text-decoration: none;
-    transition: background 0.3s ease;
-}
-
-#menuDropdown a:hover {
-    background-color: #f0f0f0;
-}
-
-.dark #menuDropdown a {
+.dark #menuDropdown ul li a {
     color: white;
 }
 
-.dark #menuDropdown a:hover {
+.dark #menuDropdown ul li a:hover {
     background-color: #444;
 }
-
-/* ========== Thẻ ứng dụng ========== */
 /* ========== Thẻ ứng dụng ========== */
 .app-card {
     background: #f0f0f0; /* Màu nền sáng cho chế độ sáng */
