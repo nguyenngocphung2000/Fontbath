@@ -34,7 +34,7 @@ body {
 }
 
 .dark h1, .dark h2, .dark p {
-    text-shadow: 1px 1px 3px rgba(255, 255, 255, 0.7);
+    
     transition: color 0.3s ease;
 }
 
@@ -182,6 +182,7 @@ input[type="text"] {
 /* ========== Thẻ ứng dụng ========== */
 .app-card {
     background: #ffffff; /* Màu nền sáng cho chế độ sáng */
+    color: #ffffff;
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
     border-radius: 15px;
