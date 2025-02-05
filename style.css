@@ -47,7 +47,9 @@ body {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 15px 20px;
+    padding: 10px 15px;
+    height: 50px; 
+    font-size: 14px;
     background: linear-gradient(45deg, #1e3a8a, #2563eb); /* Hiệu ứng gradient xanh dương */
     color: white;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
@@ -72,9 +74,9 @@ body {
 .navbar button {
     background: rgba(255, 255, 255, 0.2); /* Nền trong suốt nhẹ */
     border: 2px solid rgba(255, 255, 255, 0.5);
-    padding: 8px 12px;
+    padding: 6px 10px;
     border-radius: 8px;
-    font-size: 18px;
+    font-size: 16px;
     color: white;
     cursor: pointer;
     transition: all 0.3s ease-in-out;
@@ -128,19 +130,23 @@ input[type="text"] {
 }
 
 /* ========== Dropdown menu ========== */
-/* ========== Dropdown menu ========== */
 #menuDropdown {
     position: absolute;
+    top: 60px; /* Để menu nằm dưới navbar */
+    left: 20px; /* Đưa menu ra bên trái */
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-    padding: 10px;
-    top: 50px; /* Đặt vị trí menu dưới navbar */
-    right: 20px;
-    width: 200px; /* Chiều rộng của menu */
+    padding: 10px 0;
+    width: 200px;
+    z-index: 1100; /* Đảm bảo menu hiển thị trên navbar */
+    display: none;  /* Ẩn mặc định */
 }
 
+/* Hiển thị menu */
+#menuDropdown.show {
+    display: block;
+}
 #menuDropdown ul {
     list-style: none;
     margin: 0;
