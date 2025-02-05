@@ -188,6 +188,7 @@ input[type="text"] {
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
     width: 100%;
     max-width: 320px; /* Định kích thước đồng nhất */
     display: flex;
@@ -221,8 +222,7 @@ input[type="text"] {
 /* Hàng chứa nút tải xuống */
 .app-card .app-footer {
     display: flex;
-    justify-content: flex-start; /* Căn nút về bên trái */
-    align-items: center;
+    justify-content: flex-start;
     width: 100%;
 }
 
