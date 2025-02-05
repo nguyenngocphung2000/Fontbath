@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     setTimeout(() => {
         document.getElementById("preloader").style.display = "none";
     }, 500);
-
+    
     const apps = [
         { name: "Zalo", desc: "Ứng dụng nhắn tin phổ biến.", link: "https://zalo.me/download" },
         { name: "Telegram", desc: "Nhắn tin bảo mật, tốc độ cao.", link: "https://telegram.org/apps" },
@@ -61,16 +61,22 @@ document.addEventListener("DOMContentLoaded", function () {
 
     // Dark mode toggle
     const darkModeToggle = document.getElementById("darkModeToggle");
-    const body = document.body;
+const body = document.body;
 
-    if (localStorage.getItem("darkMode") === "enabled") {
-        body.classList.add("dark");
-    }
+// Kiểm tra localStorage và cập nhật chế độ tối
+if (localStorage.getItem("darkMode") === "enabled") {
+    body.classList.add("dark");
+    darkModeToggle.textContent = "☀️";
+} else {
+    darkModeToggle.textContent = "🌙";
+}
 
-    darkModeToggle.addEventListener("click", () => {
-        body.classList.toggle("dark");
-        localStorage.setItem("darkMode", body.classList.contains("dark") ? "enabled" : "disabled");
-    });
+// Toggle chế độ tối
+darkModeToggle.addEventListener("click", () => {
+    const isDark = body.classList.toggle("dark");
+    localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
+    darkModeToggle.textContent = isDark ? "☀️" : "🌙";
+});
 
     // Ngăn chặn menu chuột phải
     document.addEventListener("contextmenu", function(event) {
@@ -81,19 +87,16 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("copy", function(event) {
         event.preventDefault();
     });
-    
-});
-document.addEventListener("DOMContentLoaded", function () {
     const menuToggle = document.getElementById("menu-toggle");
     const menuDropdown = document.getElementById("menuDropdown");
 
-    menuToggle.addEventListener("click", function () {
+    menuToggle.addEventListener("click", function (event) {
+        event.stopPropagation();
         menuDropdown.classList.toggle("hidden");
     });
 
-    // Ẩn menu khi click ra ngoài
     document.addEventListener("click", function (event) {
-        if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
+        if (!menuDropdown.contains(event.target) && !menuToggle.contains(event.target)) {
             menuDropdown.classList.add("hidden");
         }
     });
