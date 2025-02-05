@@ -1,8 +1,9 @@
 document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, 0);
     setTimeout(() => {
-        document.getElementById("preloader").style.display = "none";
-    }, 500);
+        const preloader = document.getElementById("preloader");
+        preloader.classList.add("hide");
+    }, 1000);
     
     const apps = [
         { name: "Zalo", desc: "Ứng dụng nhắn tin phổ biến.", link: "https://zalo.me/download" },
