@@ -104,4 +104,10 @@ darkModeToggle.addEventListener("click", () => {
             menuDropdown.classList.remove("show");
         }
     });
+    // Thêm sự kiện để tải lại trang khi nhấn vào chữ "Apps"
+const navbarTitle = document.querySelector('.navbar-title');
+
+navbarTitle.addEventListener('click', () => {
+    location.reload(); // Tải lại trang khi nhấn vào "Apps"
+});
 });
