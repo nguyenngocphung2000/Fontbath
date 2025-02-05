@@ -62,16 +62,7 @@
     text-transform: uppercase;
     letter-spacing: 2px;
     animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-    0%, 100% {
-        opacity: 1;
-    }
-    50% {
-        opacity: 0.5;
-    }
-}
+    
 /* ========== Hiệu ứng cuộn trang ========== */
 section {
     padding: 100px 20px;
