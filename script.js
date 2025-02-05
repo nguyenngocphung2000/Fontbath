@@ -1,23 +1,4 @@
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hide');
 
-        setTimeout(() => {
-            preloader.remove();
-        }, 1000);
-    }
-});
-
-setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hide');
-        setTimeout(() => {
-            preloader.remove();
-        }, 1000);
-    }
-}, 5000);
 document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, 0);
     const apps = [
@@ -593,3 +574,23 @@ darkModeToggle.addEventListener("click", () => {
     }
     
 });
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hide');
+
+        setTimeout(() => {
+            preloader.remove();
+        }, 1000);
+    }
+});
+
+setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hide');
+        setTimeout(() => {
+            preloader.remove();
+        }, 1000);
+    }
+}, 5000);
