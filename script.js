@@ -83,9 +83,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
     
 });
-// Chức năng cho nút menu để hiển thị hoặc ẩn nội dung
-document.getElementById('menuToggle').addEventListener('click', function() {
-    var menu = document.getElementById('menuDropdown');
-    // Toggle hiển thị menu
-    menu.classList.toggle('hidden');
+document.addEventListener("DOMContentLoaded", function () {
+    const menuToggle = document.getElementById("menu-toggle");
+    const menuDropdown = document.getElementById("menuDropdown");
+
+    menuToggle.addEventListener("click", function () {
+        if (menuDropdown.classList.contains("hidden")) {
+            menuDropdown.classList.remove("hidden");
+            menuDropdown.classList.add("block");
+        } else {
+            menuDropdown.classList.add("hidden");
+            menuDropdown.classList.remove("block");
+        }
+    });
+
+    // Đóng menu khi nhấn ra ngoài
+    document.addEventListener("click", function (event) {
+        if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
+            menuDropdown.classList.add("hidden");
+            menuDropdown.classList.remove("block");
+        }
+    });
 });
