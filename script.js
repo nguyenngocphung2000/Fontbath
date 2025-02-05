@@ -545,6 +545,16 @@ darkModeToggle.addEventListener("click", () => {
         menuDropdown.classList.toggle("hidden");
         menuDropdown.classList.toggle("show");
     });
+    const sections = document.querySelectorAll('section');
+
+    const checkVisibility = () => {
+        sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            const sectionBottom = section.getBoundingClientRect().bottom;
+            if (sectionTop < window.innerHeight && sectionBottom > 0) {
+                section.classList.add('visible');
+            }
+        });
 
     // Đóng menu khi click ra ngoài
     document.addEventListener("click", function (event) {
@@ -561,4 +571,5 @@ darkModeToggle.addEventListener("click", () => {
             window.location.href = 'https://nguyenngocphung2000.github.io/Fontbath/'; // Đường dẫn bạn muốn chuyển đến
         });
     }
+    
 });
