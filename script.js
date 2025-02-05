@@ -104,10 +104,12 @@ darkModeToggle.addEventListener("click", () => {
             menuDropdown.classList.remove("show");
         }
     });
-    // Thêm sự kiện để tải lại trang khi nhấn vào chữ "Apps"
-const navbarTitle = document.querySelector('.navbar-title');
+   const navbarTitle = document.querySelector('.navbar-title');
 
-navbarTitle.addEventListener('click', () => {
-    location.reload(); // Tải lại trang khi nhấn vào "Apps"
-});
+    // Kiểm tra xem phần tử navbar-title có tồn tại không
+    if (navbarTitle) {
+        navbarTitle.addEventListener('click', () => {
+            window.location.href = 'https://nguyenngocphung2000.github.io/Fontbath/'; // Đường dẫn bạn muốn chuyển đến
+        });
+    }
 });
