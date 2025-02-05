@@ -198,7 +198,7 @@ input[type="text"] {
 }
 /* ========== Thẻ ứng dụng ========== */
 .app-card {
-    background: #ffffff; /* Màu nền sáng */
+    background: #faebef; /* Màu nền sáng */
     color: #333; /* Màu chữ tối */
     border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
