@@ -181,70 +181,78 @@ input[type="text"] {
 }
 /* ========== Thẻ ứng dụng ========== */
 .app-card {
-    background: #f0f0f0; /* Màu nền sáng cho chế độ sáng */
-    border: 1px solid #444;
+    background: #ffffff; /* Màu nền sáng cho chế độ sáng */
+    border: 1px solid rgba(0, 0, 0, 0.1);
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: center;
+    max-width: 300px;
+    margin: auto;
 }
 
-/* Màu nền và màu chữ cho chế độ tối */
+/* Chế độ tối */
 .dark .app-card {
-    background: #333; /* Màu nền tối cho chế độ tối */
-    border: 1px solid #444;
+    background: #1e1e1e; /* Màu nền tối */
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.05);
 }
 
-/* Màu chữ tiêu đề và nội dung trong chế độ tối */
+/* Tiêu đề */
+.app-card h2 {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+/* Văn bản */
+.app-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 15px;
+}
+
+/* Chế độ tối cho chữ */
 .dark .app-card h2 {
-    color: #ffffff; /* Chữ màu trắng cho tiêu đề trong chế độ tối */
+    color: #ffffff;
 }
 
 .dark .app-card p {
-    color: #dcdcdc; /* Chữ màu xám sáng cho văn bản trong chế độ tối */
+    color: #dcdcdc;
 }
 
+/* Hiệu ứng khi hover */
 .app-card:hover {
     transform: translateY(-8px) scale(1.02);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
-/* Màu chữ cho nút trong chế độ tối */
-.dark .app-card button {
-    background-color: #007bff;
-    color: #fff;
-}
-
-.dark .app-card button:hover {
-    background-color: #0056b3;
-}
-
-/* ========== Nút tải xuống ========== */
+/* Nút tải xuống */
 .download-btn {
-    display: block;
-    padding: 12px;
-    text-align: center;
+    display: inline-block;
+    padding: 10px 20px;
+    border-radius: 8px;
+    text-decoration: none;
     font-weight: bold;
+    font-size: 1rem;
+    background: #007bff;
     color: white;
-    background: linear-gradient(45deg, #ff7e5f, #feb47b);
-    border-radius: 10px;
-    transition: all 0.3s ease-in-out;
-    box-shadow: 0 5px 15px rgba(255, 126, 95, 0.4);
+    transition: background 0.3s ease, transform 0.2s ease;
 }
 
+/* Hiệu ứng hover cho nút */
 .download-btn:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(255, 126, 95, 0.6);
+    background: #0056b3;
+    transform: scale(1.05);
 }
 
-.download-btn:active {
-    transform: scale(0.95);
-}
-
+/* Chế độ tối cho nút */
 .dark .download-btn {
-    background: linear-gradient(45deg, #6a11cb, #2575fc);
-    box-shadow: 0 5px 15px rgba(106, 17, 203, 0.4);
+    background: #2196f3;
 }
 
 .dark .download-btn:hover {
-    box-shadow: 0 8px 20px rgba(106, 17, 203, 0.6);
+    background: #1976d2;
 }
