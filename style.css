@@ -221,12 +221,13 @@ input[type="text"] {
 /* Hàng chứa nút tải xuống */
 .app-card .app-footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-start; /* Căn nút về bên trái */
     align-items: center;
     width: 100%;
 }
 
-/* Nút tải xuống căn phải */
+/*Nút tải xuống căn trái */
+
 .app-card .download-btn {
     display: inline-block;
     padding: 10px 15px;
@@ -238,7 +239,7 @@ input[type="text"] {
     color: white;
     transition: background 0.3s ease, transform 0.2s ease;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-    margin-left: auto; /* Đẩy sang phải */
+    margin-right: auto; /* Đẩy nút về bên trái */
 }
 
 /* Hover nút */
@@ -246,7 +247,6 @@ input[type="text"] {
     background: #003f7f;
     transform: translateY(-2px);
 }
-
 /* Chế độ tối */
 .dark .app-card {
     background: #222; /* Nền tối */
