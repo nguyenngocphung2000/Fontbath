@@ -3,19 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
         document.getElementById("preloader").style.display = "none";
     }, 500);
 
-    const menuToggle = document.getElementById("menuToggle");
-    const menuDropdown = document.getElementById("menuDropdown");
-
-    menuToggle.addEventListener("click", function () {
-        menuDropdown.classList.toggle("show");
-    });
-
-    document.addEventListener("click", function (event) {
-        if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
-            menuDropdown.classList.remove("show");
-        }
-    });
-
     const apps = [
         { name: "Zalo", desc: "Ứng dụng nhắn tin phổ biến.", link: "https://zalo.me/download" },
         { name: "Telegram", desc: "Nhắn tin bảo mật, tốc độ cao.", link: "https://telegram.org/apps" },
@@ -94,4 +81,11 @@ document.addEventListener("DOMContentLoaded", function () {
     document.addEventListener("copy", function(event) {
         event.preventDefault();
     });
+    
+});
+// Chức năng cho nút menu để hiển thị hoặc ẩn nội dung
+document.getElementById('menu-toggle').addEventListener('click', function() {
+    var menu = document.getElementById('menuDropdown');
+    // Toggle hiển thị menu
+    menu.classList.toggle('hidden');
 });
