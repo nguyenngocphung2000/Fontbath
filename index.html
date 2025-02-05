@@ -9,22 +9,24 @@
 </head>
 <body>
     <!-- Hiệu ứng tải trang -->
-    <div id="preloader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
+        <div id="preloader" class="fixed inset-0 bg-white dark:bg-gray-900 flex items-center justify-center z-50">
         <div class="loader"></div>
     </div>
-<nav 
-    class="navbar">
-    <button id="menu-toggle">☰</button> <!-- Nút menu bên trái -->
-    <span class="navbar-title">Apps</span> <!-- Chữ ở giữa -->
-  <button id="darkModeToggle">🌙</button> <!-- Nút chế độ tối bên phải -->  
-</nav>
-    
-<div id="menuDropdown" class="hidden">
-    <ul>
-        <li><a href="#guide">Hướng dẫn sử dụng</a></li>
-        <li><a href="#news">Tin tức mới</a></li>
-    </ul>
-</div>
+
+    <!-- Thanh điều hướng -->
+    <nav class="navbar">
+        <button id="menu-toggle">☰</button> <!-- Nút menu bên trái -->
+        <span class="navbar-title">Apps</span> <!-- Chữ ở giữa -->
+        <button id="darkModeToggle">🌙</button> <!-- Nút chế độ tối bên phải -->  
+    </nav>
+
+    <!-- Menu thả xuống -->
+    <div id="menuDropdown" class="absolute left-4 top-14 bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600 shadow-md rounded-lg p-3 hidden">
+        <ul>
+            <li><a href="#guide" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Hướng dẫn sử dụng</a></li>
+            <li><a href="#news" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Tin tức mới</a></li>
+        </ul>
+    </div>
     <!-- Phần tìm kiếm -->
     <div class="search-container p-6 text-center mt-16">
         <input type="text" id="search" placeholder="🔍 Tìm kiếm ứng dụng..."
