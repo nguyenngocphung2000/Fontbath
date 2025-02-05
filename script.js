@@ -88,17 +88,20 @@ darkModeToggle.addEventListener("click", () => {
     document.addEventListener("copy", function(event) {
         event.preventDefault();
     });
-    const menuToggle = document.getElementById("menu-toggle");
+        const menuToggle = document.getElementById("menu-toggle");
     const menuDropdown = document.getElementById("menuDropdown");
 
     menuToggle.addEventListener("click", function (event) {
-        event.stopPropagation();
+        event.stopPropagation(); // Ngăn chặn sự kiện click lan ra ngoài
         menuDropdown.classList.toggle("hidden");
+        menuDropdown.classList.toggle("show");
     });
 
+    // Đóng menu khi click ra ngoài
     document.addEventListener("click", function (event) {
-        if (!menuDropdown.contains(event.target) && !menuToggle.contains(event.target)) {
+        if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
             menuDropdown.classList.add("hidden");
+            menuDropdown.classList.remove("show");
         }
     });
 });
