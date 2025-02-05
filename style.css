@@ -39,27 +39,70 @@ body {
 }
 
 /* ========== Thanh điều hướng (Navbar) ========== */
-.navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 1000;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 12px 20px;
-    background-color: #ffffff;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: background 0.3s, box-shadow 0.3s;
-}
-
 .dark .navbar {
     background-color: #222831;
     box-shadow: 0 2px 5px rgba(255, 255, 255, 0.1);
 }
 
 /* ========== Logo & Menu ========== */
+/* ====== Thanh Navbar đẹp hơn ====== */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Đưa hai nút ra hai bên */
+    align-items: center;
+    padding: 15px 20px;
+    background: linear-gradient(45deg, #1e3a8a, #2563eb); /* Hiệu ứng gradient xanh dương */
+    color: white;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2); /* Hiệu ứng bóng */
+    border-radius: 0 0 10px 10px; /* Bo góc dưới */
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+/* ====== Tiêu đề ở giữa ====== */
+.navbar-title {
+    flex-grow: 1;
+    text-align: center;
+    font-size: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* ====== Nút menu & chế độ tối ====== */
+.navbar button {
+    background: rgba(255, 255, 255, 0.2); /* Nền trong suốt nhẹ */
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 18px;
+    color: white;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+/* ====== Hiệu ứng hover ====== */
+.navbar button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    transform: scale(1.1);
+}
+
+/* ====== Dark Mode ====== */
+.dark .navbar {
+    background: linear-gradient(45deg, #0f172a, #1e293b); /* Chuyển màu tối hơn */
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.1);
+}
+
+/* ====== Giữ nút menu bên trái và nút chế độ tối bên phải ====== */
+#menu-toggle {
+    order: -1;
+}
+
+#dark-mode-toggle {
+    order: 1;
+}
 .navbar .logo {
     font-size: 22px;
     font-weight: bold;
