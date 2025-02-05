@@ -131,9 +131,9 @@ input[type="text"] {
 
 /* ========== Dropdown menu ========== */
 #menuDropdown {
-    position: absolute;
-    top: 60px; /* Để menu nằm dưới navbar */
-    left: 20px; /* Đưa menu ra bên trái */
+    position: fixed; 
+    top: 50px; /* Để menu nằm dưới navbar */
+    left: 10px; /* Đưa menu ra bên trái */
     background-color: #ffffff;
     border-radius: 8px;
     box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.2);
