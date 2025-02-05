@@ -112,6 +112,10 @@ section.visible {
         transform: translateX(0);
     }
 }
+.content {
+    padding: 20px;
+    text-align: center;
+}  
 
 /* ========== Tổng thể giao diện ========== */
 body {
