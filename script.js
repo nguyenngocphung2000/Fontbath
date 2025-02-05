@@ -1,3 +1,13 @@
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hide');
+
+        setTimeout(() => {
+            preloader.remove();
+        }, 800);
+    }
+});
 document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, 0);
     const preloader = document.getElementById('preloader');
