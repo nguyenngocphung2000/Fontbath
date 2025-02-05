@@ -171,11 +171,17 @@ input[type="text"] {
 
 /* ========== Thẻ ứng dụng ========== */
 .app-card {
-    background: #333;
+    background: #f0f0f0; /* Màu nền sáng cho chế độ sáng */
     border: 1px solid #444;
     padding: 20px;
     border-radius: 12px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Màu nền cho chế độ tối */
+.dark .app-card {
+    background: #333; /* Màu nền tối cho chế độ tối */
+    border: 1px solid #444;
 }
 
 .app-card:hover {
