@@ -1,9 +1,15 @@
 document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, 0);
+    // Ẩn preloader khi trang tải xong
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    preloader.classList.add('hide');
+
+    // Xóa preloader khỏi DOM sau khi ẩn (tùy chọn)
     setTimeout(() => {
-        const preloader = document.getElementById("preloader");
-        preloader.classList.add("hide");
-    }, 1000);
+        preloader.remove();
+    }, 800); // Thời gian phù hợp với thời gian transition của preloader
+});
     
     const apps = [
       { name: "Four in One", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://whatshub.top/module/4in1.module" },
