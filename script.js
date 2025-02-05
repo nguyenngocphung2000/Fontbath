@@ -1,22 +1,25 @@
-window.addEventListener('load', () => {
+document.addEventListener("DOMContentLoaded", function () {
+    window.scrollTo(0, 0);
+    window.addEventListener('load', () => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.classList.add('hide');
 
         setTimeout(() => {
             preloader.remove();
-        }, 800);
+        }, 1000);
     }
 });
-document.addEventListener("DOMContentLoaded", function () {
-    window.scrollTo(0, 0);
+
+setTimeout(() => {
     const preloader = document.getElementById('preloader');
     if (preloader) {
         preloader.classList.add('hide');
         setTimeout(() => {
             preloader.remove();
-        }, 800);
+        }, 1000);
     }
+}, 5000);
     const apps = [
       { name: "Four in One", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://whatshub.top/module/4in1.module" },
 { name: "BingAI for Safari", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://whatshub.top/module/bfs.module" },
