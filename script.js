@@ -545,6 +545,7 @@ darkModeToggle.addEventListener("click", () => {
         menuDropdown.classList.toggle("hidden");
         menuDropdown.classList.toggle("show");
     });
+    // Hiệu ứng fade-in khi cuộn trang
     const sections = document.querySelectorAll('section');
 
     const checkVisibility = () => {
@@ -555,7 +556,11 @@ darkModeToggle.addEventListener("click", () => {
                 section.classList.add('visible');
             }
         });
+    };
 
+    window.addEventListener('scroll', checkVisibility);
+    checkVisibility(); // Kiểm tra ngay khi tải trang
+});
     // Đóng menu khi click ra ngoài
     document.addEventListener("click", function (event) {
         if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
