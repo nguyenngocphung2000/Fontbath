@@ -8,47 +8,36 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Hiệu ứng tải trang -->
-    
-    <!-- Thanh điều hướng -->
+      <div id="preloader">
+        <div class="loader"></div>
+        <div class="loader-text">Loading...</div>
+    </div>
     <nav class="navbar">
         <button id="menu-toggle">☰</button>
         <span class="navbar-title">ShadowRocket</span>
         <button id="darkModeToggle">🌙</button>  
     </nav>
-
-    <!-- Menu thả xuống -->
     <div id="menuDropdown" class="absolute left-4 top-14 bg-white dark:bg-gray-800 text-black dark:text-white border border-gray-300 dark:border-gray-600 shadow-md rounded-lg p-3 hidden">
         <ul>
             <li><a href="#guide" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Hướng dẫn sử dụng</a></li>
             <li><a href="#news" class="block px-4 py-2 hover:bg-gray-200 dark:hover:bg-gray-700 rounded">Tin tức mới</a></li>
         </ul>
     </div>
-    <!-- Phần tìm kiếm -->
     <div class="search-container p-6 text-center mt-16">
         <input type="text" id="search" placeholder="🔍 Tìm kiếm ứng dụng..."
                class="p-3 w-2/3 md:w-1/2 border rounded-lg focus:ring focus:ring-blue-400">
     </div>
-
-    <!-- Danh sách ứng dụng -->
     <div id="appList" class="p-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        <!-- Ứng dụng sẽ được thêm bằng JavaScript -->
     </div>
-
-    <!-- Phần liên hệ -->
     <div class="contact-section p-6 text-center">
         <h2 class="text-lg font-semibold">📧 Liên hệ</h2>
         <p>Telegram: @nothing3272</p>
     </div>
-
     <script src="script.js"></script>
-<!-- Phần hướng dẫn -->
 <section id="guide" class="p-6">
     <h2 class="text-xl font-semibold">Hướng dẫn sử dụng</h2>
     <p>Đây là phần hướng dẫn sử dụng sản phẩm. Các bước hướng dẫn sẽ được liệt kê ở đây.</p>
 </section>
-
-<!-- Phần tin tức -->
 <section id="news" class="p-6">
     <h2 class="text-xl font-semibold">Tin tức mới</h2>
     <p>Cập nhật tin tức về sản phẩm, dịch vụ hoặc các sự kiện mới nhất sẽ được đăng ở đây.</p>
