@@ -498,6 +498,7 @@ function renderApps(filteredApps) {
             </a>
         `;
         appList.appendChild(appCard);
+        observer.observe(appCard);
     });
 }
 document.addEventListener('DOMContentLoaded', () => {
@@ -571,4 +572,17 @@ window.addEventListener("scroll", function () {
         navbar.style.background = "";
         navbar.style.backdropFilter = "none";
     }
+});
+const appCards = document.querySelectorAll('.app-card');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+        }
+    });
+}, { threshold: 0.3 });
+
+appCards.forEach(card => {
+    observer.observe(card);
 });
