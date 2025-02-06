@@ -577,7 +577,6 @@ window.addEventListener("scroll", function () {
         } else {
             navbar.style.background = "rgba(30, 58, 138, 0.8)";
         }
-        navbar.style.backdropFilter = "blur(10px)";
     } else {
         navbar.style.background = "";
         navbar.style.backdropFilter = "none";
