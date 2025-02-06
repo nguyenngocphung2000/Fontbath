@@ -129,7 +129,7 @@ body {
     color: #fff;
     font: 16px 'Poppins', sans-serif;
     transition: background 0.3s, color 0.3s;
-    padding-top: 60px;
+    padding-top: 120px;
 }
 
 .dark body {
@@ -203,6 +203,11 @@ body {
     width: 70%;
     border: 1px solid #ddd; 
     border-radius: 8px;
+}
+.search-fixed {
+    position: fixed !important;
+    top: 57px !important;
+    width: 70%;
 }
 #search::placeholder {
     color: #aaa;
