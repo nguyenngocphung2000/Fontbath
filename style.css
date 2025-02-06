@@ -256,15 +256,15 @@ input[type="text"] {
     background: #444;
 }
 .search-container {
+    top: 57px
     position: fixed;
-    top: 55px;
     left: 50%;
     transform: translateX(-50%);
     width: 70%;
     z-index: 1111;
-    padding-top: 57px;
 }
 .app-card {
+    
     margin-top: 10px;
     background: linear-gradient(135deg, #fff, #f0f0f0);
     color: #333;
