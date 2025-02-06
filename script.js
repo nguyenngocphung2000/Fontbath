@@ -565,3 +565,13 @@ if (navbarTitle) {
         window.location.href = 'https://nguyenngocphung2000.github.io/Fontbath/';
     });
 }
+window.addEventListener("scroll", function () {
+    let navbar = document.querySelector(".navbar");
+    if (window.scrollY > 50) {
+        navbar.style.background = "rgba(30, 58, 138, 0.8)";
+        navbar.style.backdropFilter = "blur(10px)";
+    } else {
+        navbar.style.background = "linear-gradient(45deg, #1e3a8a, #2563eb)";
+        navbar.style.backdropFilter = "none";
+    }
+});
