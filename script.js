@@ -510,7 +510,7 @@ searchInput.addEventListener('input', () => {
     renderApps(filteredApps);
 });
 const darkModeToggle = document.getElementById('darkModeToggle');
-const root = document.documentElement; // Lấy thẻ <html> thay vì <body>
+const root = document.documentElement;
 if (localStorage.getItem('darkMode') === 'enabled') {
     root.classList.add('dark');
     darkModeToggle.textContent = '☀️';
@@ -573,7 +573,7 @@ window.addEventListener("scroll", function () {
     let searchBox = document.querySelector(".search-container");
     let navbarHeight = document.querySelector(".navbar").offsetHeight;
 
-    if (window.scrollY > navbarHeight + 50) { 
+    if (window.scrollY > navbarHeight) { 
         searchBox.classList.add("search-fixed");
     } else {
         searchBox.classList.remove("search-fixed");
@@ -581,9 +581,9 @@ window.addEventListener("scroll", function () {
     let navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
         if (document.documentElement.classList.contains("dark")) {
-            navbar.style.background = "rgba(15, 23, 42, 0.8)"; // Màu tối
+            navbar.style.background = "rgba(15, 23, 42, 0.8)";
         } else {
-            navbar.style.background = "rgba(30, 58, 138, 0.8)"; // Màu sáng
+            navbar.style.background = "rgba(30, 58, 138, 0.8)";
         }
         navbar.style.backdropFilter = "blur(10px)";
     } else {
