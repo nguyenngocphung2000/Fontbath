@@ -494,7 +494,7 @@ function renderApps(filteredApps) {
             <h2 class="font-semibold">${app.name}</h2>
             <p>${app.desc}</p>
             <a href="${app.link}" target="_blank" class="download-btn">
-                Tải xuống
+                🔗Lấy link
             </a>
         `;
         appList.appendChild(appCard);
