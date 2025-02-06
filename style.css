@@ -186,7 +186,7 @@ body {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 .search-container {
-    position: fixed;
+    position: absolute;
     top: 55px;
     left: 50%;
     transform: translateX(-50%);
