@@ -275,7 +275,9 @@ input[type="text"] {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s ease;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
     text-align: left;
     width: 100%;
     max-width: 320px;
@@ -283,7 +285,26 @@ input[type="text"] {
     flex-direction: column;
     justify-content: space-between;
 }
+.app-card.visible {
+    opacity: 1;
+    transform: translateY(0);
+    animation: bounce 0.5s ease-out;
+}
 
+@keyframes bounce {
+    0% {
+        transform: translateY(0);
+    }
+    30% {
+        transform: translateY(-10px);
+    }
+    50% {
+        transform: translateY(5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
 .app-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
