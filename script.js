@@ -570,6 +570,14 @@ if (navbarTitle) {
     });
 }
 window.addEventListener("scroll", function () {
+    let searchBox = document.querySelector(".search-container");
+    let navbarHeight = document.querySelector(".navbar").offsetHeight;
+
+    if (window.scrollY > navbarHeight + 50) { 
+        searchBox.classList.add("search-fixed");
+    } else {
+        searchBox.classList.remove("search-fixed");
+    }
     let navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
         if (document.documentElement.classList.contains("dark")) {
