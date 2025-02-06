@@ -174,7 +174,8 @@ body {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 .search-container {
-    position: relative;
+    position: fixed;
+    top: 57px;
     left: 50%;
     transition: top 0.3s ease;
     transform: translateX(-50%);
@@ -191,14 +192,6 @@ body {
     width: 70%;
     border: 1px solid #ddd; 
     border-radius: 8px;
-}
-.search-fixed {
-    position: fixed !important;
-    width: 70%;
-    left: 50%;
-    top: 60px;
-    transform: translateX(-50%);
-    z-index: 1111;
 }
 input[type="text"] {
     background: #fff;
