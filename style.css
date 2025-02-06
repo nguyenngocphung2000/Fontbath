@@ -185,6 +185,24 @@ body {
     background: linear-gradient(45deg, #0f172a, #1e293b);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
+.search-container {
+    position: sticky;
+    top: 61px; 
+    z-index: 1000;
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+    background-color: #fff;
+}
+
+#search {
+    padding: 10px;
+    width: 70%;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    font-size: 16px;
+}
 
 input[type="text"] {
     background: #fff;
