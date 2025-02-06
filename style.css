@@ -194,8 +194,10 @@ body {
 }
 .search-fixed {
     position: fixed !important;
-    top: 60px !important;
     width: 70%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1111;
 }
 input[type="text"] {
     background: #fff;
