@@ -1,5 +1,21 @@
-
-document.addEventListener("DOMContentLoaded", function () {
+window.addEventListener('load', () => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hide');
+        setTimeout(() => {
+            preloader.remove();
+        }, 800); 
+    }
+});
+setTimeout(() => {
+    const preloader = document.getElementById('preloader');
+    if (preloader) {
+        preloader.classList.add('hide');
+        setTimeout(() => {
+            preloader.remove();
+        }, 800);
+    }
+}, 5000);document.addEventListener("DOMContentLoaded", function () {
     window.scrollTo(0, 0);
     const apps = [
       { name: "Four in One", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://whatshub.top/module/4in1.module" },
@@ -574,23 +590,3 @@ darkModeToggle.addEventListener("click", () => {
     }
     
 });
-window.addEventListener('load', () => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hide');
-
-        setTimeout(() => {
-            preloader.remove();
-        }, 1000);
-    }
-});
-
-setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hide');
-        setTimeout(() => {
-            preloader.remove();
-        }, 1000);
-    }
-}, 5000);
