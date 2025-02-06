@@ -129,7 +129,7 @@ body {
     color: #fff;
     font: 16px 'Poppins', sans-serif;
     transition: background 0.3s, color 0.3s;
-    padding-top: 120px;
+    padding-top: 160px;
 }
 
 .dark body {
@@ -186,7 +186,7 @@ body {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 .search-container {
-    position: absolute;
+    position: fixed;
     top: 55px;
     left: 50%;
     transform: translateX(-50%);
