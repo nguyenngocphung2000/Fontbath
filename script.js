@@ -525,9 +525,19 @@ darkModeToggle.addEventListener('click', () => {
 document.addEventListener('contextmenu', (event) => {
     event.preventDefault();
 });
+document.addEventListener('dragstart', (event) => {
+    event.preventDefault();
+});
 document.addEventListener('copy', (event) => {
     event.preventDefault();
 });
+const devtoolsDetection = setInterval(() => {
+    const devtools = window.outerWidth - window.innerWidth > 100 || window.outerHeight - window.innerHeight > 100;
+    if (devtools) {
+        alert('Đừng sử dụng DevTools!');
+        clearInterval(devtoolsDetection);
+    }
+}, 1000);
 const menuToggle = document.getElementById('menu-toggle');
 const menuDropdown = document.getElementById('menuDropdown');
 menuToggle.addEventListener('click', (event) => {
