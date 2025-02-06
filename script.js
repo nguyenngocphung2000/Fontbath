@@ -7,15 +7,6 @@ window.addEventListener('load', () => {
         }, 800);
     }
 });
-setTimeout(() => {
-    const preloader = document.getElementById('preloader');
-    if (preloader) {
-        preloader.classList.add('hide');
-        setTimeout(() => {
-            preloader.remove();
-        }, 800);
-    }
-}, 5000);
 const searchInput = document.getElementById('search');
 const appList = document.getElementById('appList');
 
@@ -509,22 +500,24 @@ function renderApps(filteredApps) {
         appList.appendChild(appCard);
     });
 }
-renderApps(apps);
+document.addEventListener('DOMContentLoaded', () => {
+    renderApps(apps);
+});
 searchInput.addEventListener('input', () => {
     const searchText = searchInput.value.toLowerCase();
     const filteredApps = apps.filter(app => app.name.toLowerCase().includes(searchText));
     renderApps(filteredApps);
 });
 const darkModeToggle = document.getElementById('darkModeToggle');
-const body = document.body;
+const root = document.documentElement; // Lấy thẻ <html> thay vì <body>
 if (localStorage.getItem('darkMode') === 'enabled') {
-    body.classList.add('dark');
+    root.classList.add('dark');
     darkModeToggle.textContent = '☀️';
 } else {
     darkModeToggle.textContent = '🌙';
 }
 darkModeToggle.addEventListener('click', () => {
-    const isDark = body.classList.toggle('dark');
+    const isDark = root.classList.toggle('dark');
     localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
     darkModeToggle.textContent = isDark ? '☀️' : '🌙';
 });
@@ -568,13 +561,14 @@ if (navbarTitle) {
 window.addEventListener("scroll", function () {
     let navbar = document.querySelector(".navbar");
     if (window.scrollY > 50) {
-        navbar.style.background = "rgba(30, 58, 138, 0.8)";
+        if (document.documentElement.classList.contains("dark")) {
+            navbar.style.background = "rgba(15, 23, 42, 0.8)"; // Màu tối
+        } else {
+            navbar.style.background = "rgba(30, 58, 138, 0.8)"; // Màu sáng
+        }
         navbar.style.backdropFilter = "blur(10px)";
     } else {
-        navbar.style.background = "linear-gradient(45deg, #1e3a8a, #2563eb)";
+        navbar.style.background = "";
         navbar.style.backdropFilter = "none";
     }
-    let parallax = document.querySelector(".parallax");
-    let scrollPosition = window.scrollY;
-    parallax.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
 });
