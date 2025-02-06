@@ -83,7 +83,13 @@ section.visible {
     opacity: 1;
     transform: translateY(0);
 }
-
+section h2 {
+    color: #fff;
+    text-shadow: 0 0 5px rgba(255, 255, 255, 0.5);
+}
+section p {
+    color: #ddd;
+}
 .parallax {
     background: url('https://via.placeholder.com/1920x1080') no-repeat center center/cover;
     height: 500px;
