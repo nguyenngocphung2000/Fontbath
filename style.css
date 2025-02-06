@@ -129,7 +129,7 @@ body {
     color: #fff;
     font: 16px 'Poppins', sans-serif;
     transition: background 0.3s, color 0.3s;
-    padding-top: 80px;
+    padding-top: 60px;
 }
 
 .dark body {
@@ -190,8 +190,8 @@ body {
     top: 60px;
     left: 50%;
     transform: translateX(-50%);
-    width: 70%;
-    z-index: 1000;
+    width: 60%;
+    z-index: 1111;
     text-align: left;
     padding: 10px;
     background-color: transparent;
@@ -199,7 +199,7 @@ body {
 }
 #search {
     padding: 10px;
-    width: 100%;
+    width: 60%;
     border: 1px solid #ddd; 
     border-radius: 8px;
 }
