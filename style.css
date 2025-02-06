@@ -255,8 +255,16 @@ input[type="text"] {
 .dark #menuDropdown ul li a:hover {
     background: #444;
 }
-
+.search-container {
+    position: fixed;
+    top: 55px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    z-index: 1111;
+}
 .app-card {
+    margin-top: 10px;
     background: linear-gradient(135deg, #fff, #f0f0f0);
     color: #333;
     border: 1px solid rgba(0, 0, 0, 0.1);
