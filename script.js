@@ -4,7 +4,7 @@ window.addEventListener('load', () => {
         preloader.classList.add('hide');
         setTimeout(() => {
             preloader.remove();
-        }, 800); 
+        }, 800);
     }
 });
 setTimeout(() => {
@@ -15,9 +15,11 @@ setTimeout(() => {
             preloader.remove();
         }, 800);
     }
-}, 5000);document.addEventListener("DOMContentLoaded", function () {
-    window.scrollTo(0, 0);
-    const apps = [
+}, 5000);
+const searchInput = document.getElementById('search');
+const appList = document.getElementById('appList');
+
+const apps = [
       { name: "Four in One", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://whatshub.top/module/4in1.module" },
 { name: "BingAI for Safari", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://whatshub.top/module/bfs.module" },
 { name: "去开屏广告轻量版", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://whatshub.top/module/adlite.module" },
@@ -492,101 +494,74 @@ setTimeout(() => {
 { name: "Picsart", desc: "Không có mô tả.", link: "shadowrocket://install?module=https://raw.githubusercontent.com/quocchienn/Make/refs/heads/crack/ALL_Lucky_VP3.modules" }
     ];
 
-    function renderApps(filteredApps) {
-        const appList = document.getElementById("appList");
-        appList.innerHTML = "";
-        filteredApps.forEach(app => {
-            const appCard = document.createElement("div");
-            appCard.className = "app-card p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md";
-            appCard.innerHTML = `
-                <h2 class="font-semibold">${app.name}</h2>
-                <p>${app.desc}</p>
-                <a href="${app.link}" target="_blank" class="download-btn">
-                    Tải xuống
-                </a>
-            `;
-            appList.appendChild(appCard);
-        });
-    }
-
-    // Hiển thị danh sách ứng dụng ban đầu
-    renderApps(apps);
-
-    // Xử lý tìm kiếm
-    const searchInput = document.getElementById("search");
-
-    searchInput.addEventListener("input", () => {
-        const searchText = searchInput.value.toLowerCase();
-        const filteredApps = apps.filter(app => app.name.toLowerCase().includes(searchText));
-        renderApps(filteredApps);
+function renderApps(filteredApps) {
+    appList.innerHTML = "";
+    filteredApps.forEach(app => {
+        const appCard = document.createElement('div');
+        appCard.className = 'app-card p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md';
+        appCard.innerHTML = `
+            <h2 class="font-semibold">${app.name}</h2>
+            <p>${app.desc}</p>
+            <a href="${app.link}" target="_blank" class="download-btn">
+                Tải xuống
+            </a>
+        `;
+        appList.appendChild(appCard);
     });
-
-    // Dark mode toggle
-    const darkModeToggle = document.getElementById("darkModeToggle");
-const body = document.body;
-
-// Kiểm tra localStorage và cập nhật chế độ tối
-if (localStorage.getItem("darkMode") === "enabled") {
-    body.classList.add("dark");
-    darkModeToggle.textContent = "☀️";
-} else {
-    darkModeToggle.textContent = "🌙";
 }
-
-// Toggle chế độ tối
-darkModeToggle.addEventListener("click", () => {
-    const isDark = body.classList.toggle("dark");
-    localStorage.setItem("darkMode", isDark ? "enabled" : "disabled");
-    darkModeToggle.textContent = isDark ? "☀️" : "🌙";
+renderApps(apps);
+searchInput.addEventListener('input', () => {
+    const searchText = searchInput.value.toLowerCase();
+    const filteredApps = apps.filter(app => app.name.toLowerCase().includes(searchText));
+    renderApps(filteredApps);
 });
-
-    // Ngăn chặn menu chuột phải
-    document.addEventListener("contextmenu", function(event) {
-        event.preventDefault();
-    });
-
-    // Ngăn chặn sao chép nội dung
-    document.addEventListener("copy", function(event) {
-        event.preventDefault();
-    });
-        const menuToggle = document.getElementById("menu-toggle");
-    const menuDropdown = document.getElementById("menuDropdown");
-
-    menuToggle.addEventListener("click", function (event) {
-        event.stopPropagation(); // Ngăn chặn sự kiện click lan ra ngoài
-        menuDropdown.classList.toggle("hidden");
-        menuDropdown.classList.toggle("show");
-    });
-    // Hiệu ứng fade-in khi cuộn trang
-    const sections = document.querySelectorAll('section');
-
-    const checkVisibility = () => {
-        sections.forEach(section => {
-            const sectionTop = section.getBoundingClientRect().top;
-            const sectionBottom = section.getBoundingClientRect().bottom;
-            if (sectionTop < window.innerHeight && sectionBottom > 0) {
-                section.classList.add('visible');
-            }
-        });
-    };
-
-    window.addEventListener('scroll', checkVisibility);
-    checkVisibility(); // Kiểm tra ngay khi tải trang
+const darkModeToggle = document.getElementById('darkModeToggle');
+const body = document.body;
+if (localStorage.getItem('darkMode') === 'enabled') {
+    body.classList.add('dark');
+    darkModeToggle.textContent = '☀️';
+} else {
+    darkModeToggle.textContent = '🌙';
+}
+darkModeToggle.addEventListener('click', () => {
+    const isDark = body.classList.toggle('dark');
+    localStorage.setItem('darkMode', isDark ? 'enabled' : 'disabled');
+    darkModeToggle.textContent = isDark ? '☀️' : '🌙';
 });
-    // Đóng menu khi click ra ngoài
-    document.addEventListener("click", function (event) {
-        if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
-            menuDropdown.classList.add("hidden");
-            menuDropdown.classList.remove("show");
+document.addEventListener('contextmenu', (event) => {
+    event.preventDefault();
+});
+document.addEventListener('copy', (event) => {
+    event.preventDefault();
+});
+const menuToggle = document.getElementById('menu-toggle');
+const menuDropdown = document.getElementById('menuDropdown');
+menuToggle.addEventListener('click', (event) => {
+    event.stopPropagation();
+    menuDropdown.classList.toggle('hidden');
+    menuDropdown.classList.toggle('show');
+});
+document.addEventListener('click', (event) => {
+    if (!menuToggle.contains(event.target) && !menuDropdown.contains(event.target)) {
+        menuDropdown.classList.add('hidden');
+        menuDropdown.classList.remove('show');
+    }
+});
+const sections = document.querySelectorAll('section');
+const checkVisibility = () => {
+    sections.forEach(section => {
+        const sectionTop = section.getBoundingClientRect().top;
+        const sectionBottom = section.getBoundingClientRect().bottom;
+        if (sectionTop < window.innerHeight && sectionBottom > 0) {
+            section.classList.add('visible');
         }
     });
-   const navbarTitle = document.querySelector('.navbar-title');
-
-    // Kiểm tra xem phần tử navbar-title có tồn tại không
-    if (navbarTitle) {
-        navbarTitle.addEventListener('click', () => {
-            window.location.href = 'https://nguyenngocphung2000.github.io/Fontbath/'; // Đường dẫn bạn muốn chuyển đến
-        });
-    }
-    
-});
+};
+window.addEventListener('scroll', checkVisibility);
+checkVisibility();
+const navbarTitle = document.querySelector('.navbar-title');
+if (navbarTitle) {
+    navbarTitle.addEventListener('click', () => {
+        window.location.href = 'https://nguyenngocphung2000.github.io/Fontbath/';
+    });
+}
