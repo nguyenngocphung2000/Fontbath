@@ -1,4 +1,3 @@
-/* ========== Hiệu ứng tải trang ========== */
 #preloader {
     position: fixed;
     inset: 0;
@@ -72,7 +71,6 @@
         opacity: 0.5;
     }
 }
-/* ========== Hiệu ứng cuộn trang ========== */
 section {
     padding: 100px 20px;
     text-align: center;
@@ -126,11 +124,10 @@ section.visible {
     text-align: center;
 }  
 
-/* ========== Tổng thể giao diện ========== */
 body {
     background: #2a2a2a;
     color: #fff;
-    font: 16px 'Poppins', sans-serif; /* Shorthand cho font */
+    font: 16px 'Poppins', sans-serif;
     transition: background 0.3s, color 0.3s;
     padding-top: 80px;
 }
@@ -140,7 +137,6 @@ body {
     color: #fff;
 }
 
-/* ========== Thanh điều hướng (Navbar) ========== */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -190,7 +186,6 @@ body {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* ========== Hộp tìm kiếm ========== */
 input[type="text"] {
     background: #fff;
     color: #000;
@@ -213,7 +208,6 @@ input[type="text"] {
     box-shadow: 0 0 15px rgba(74, 144, 226, 0.8);
 }
 
-/* ========== Dropdown menu ========== */
 #menuDropdown {
     position: fixed;
     top: 60px;
@@ -226,6 +220,9 @@ input[type="text"] {
     z-index: 1100;
     display: none;
     transition: all 0.3s ease;
+}
+#menuDropdown.hidden {
+    display: none;
 }
 
 #menuDropdown.show {
@@ -271,7 +268,6 @@ input[type="text"] {
     background: #444;
 }
 
-/* ========== Thẻ ứng dụng ========== */
 .app-card {
     background: linear-gradient(135deg, #fff, #f0f0f0);
     color: #333;
@@ -300,7 +296,6 @@ input[type="text"] {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 
-/* ========== Nút tải xuống ========== */
 .download-btn {
     display: inline-block;
     padding: 12px 24px;
