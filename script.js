@@ -576,10 +576,10 @@ window.addEventListener("scroll", function () {
     let currentScroll = window.scrollY;
 
     if (currentScroll < lastScrollTop) { 
-        searchBox.classList.add("search-fixed");
-        searchBox.style.top = `${navbarHeight + 3}px`;
-    } else {
         searchBox.classList.remove("search-fixed");
+        searchBox.style.top = `${navbarHeight + 1}px`;
+    } else {
+        searchBox.classList.add("search-fixed");
         searchBox.style.top = "";
     }
 
