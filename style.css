@@ -185,23 +185,30 @@ body {
     background: linear-gradient(45deg, #0f172a, #1e293b);
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
-.search-container {
-    position: sticky;
-    top: 61px; 
+search-container {
+    position: fixed;
+    top: 16px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
     z-index: 1000;
-    width: 100%;
     text-align: center;
-    padding: 10px;
-    background-color: #fff;
+    padding: 16px 0;
 }
 
 #search {
-    padding: 10px;
-    width: 70%;
-    border-radius: 5px;
-    background-color: #fff;
+    padding: 12px;
+    width: 100%;
+    max-width: 600px;
+    border-radius: 8px;
     border: 1px solid #ddd;
+    background-color: #fff;
     font-size: 16px;
+    box-sizing: border-box; 
+}
+
+#search::placeholder {
+    color: #aaa;
 }
 
 input[type="text"] {
