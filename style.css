@@ -117,7 +117,7 @@ body {
     color: #fff;
     font: 16px 'Poppins', sans-serif;
     transition: background 0.3s, color 0.3s;
-    padding-top: 5px;
+    padding-top: 110px;
 }
 
 .dark body {
@@ -262,6 +262,7 @@ input[type="text"] {
     transform: translateX(-50%);
     width: 70%;
     z-index: 1111;
+    padding-top: 57px;
 }
 .app-card {
     margin-top: 10px;
