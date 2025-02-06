@@ -204,6 +204,11 @@ body {
     border: 1px solid #ddd; 
     border-radius: 8px;
 }
+.search-fixed {
+    position: fixed !important;
+    top: 60px !important;
+    width: 70%;
+}
 input[type="text"] {
     background: #fff;
     color: #000;
