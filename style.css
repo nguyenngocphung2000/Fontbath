@@ -174,9 +174,9 @@ body {
     box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
 }
 .search-container {
-    position: absolute;
-    top: 55px;
+    position: relative;
     left: 50%;
+    transition: top 0.3s ease;
     transform: translateX(-50%);
     width: 70%;
     z-index: 1111;
@@ -196,6 +196,7 @@ body {
     position: fixed !important;
     width: 70%;
     left: 50%;
+    top: 60px;
     transform: translateX(-50%);
     z-index: 1111;
 }
