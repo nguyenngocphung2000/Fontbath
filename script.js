@@ -574,4 +574,7 @@ window.addEventListener("scroll", function () {
         navbar.style.background = "linear-gradient(45deg, #1e3a8a, #2563eb)";
         navbar.style.backdropFilter = "none";
     }
+    let parallax = document.querySelector(".parallax");
+    let scrollPosition = window.scrollY;
+    parallax.style.backgroundPositionY = `${scrollPosition * 0.5}px`;
 });
